@@ -1,0 +1,6 @@
+library(dplyr)
+elev_data <- read.delim("uw-elevations.csv.bz2")
+library(ggplot2)
+ggplot(elev_data, aes(lon, lat, col=elevation)) + geom_point() + coord_quickmap()
+dev.copy(png, "uw-elevation.png")
+dev.off()
